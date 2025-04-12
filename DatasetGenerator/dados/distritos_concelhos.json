@@ -1,0 +1,21 @@
+{
+    "Aveiro": ["Águeda", "Albergaria-a-Velha", "Anadia", "Aveiro", "Estarreja", "Ílhavo", "Murtosa", "Oliveira de Azeméis", "Ovar", "Santa Maria da Feira"],
+    "Beja": ["Aljustrel", "Almodôvar", "Beja", "Castro Verde", "Ferreira do Alentejo", "Mértola", "Odemira", "Ourique", "Serpa", "Vidigueira"],
+    "Braga": ["Amares", "Barcelos", "Braga", "Cabeceiras de Basto", "Celorico de Basto", "Esposende", "Fafe", "Guimarães", "Vila Nova de Famalicão", "Vizela"],
+    "Bragança": ["Alfândega da Fé", "Bragança", "Macedo de Cavaleiros", "Miranda do Douro", "Mirandela", "Mogadouro", "Vila Flor", "Vimioso", "Vinhais"],
+    "Castelo Branco": ["Belmonte", "Castelo Branco", "Covilhã", "Fundão", "Idanha-a-Nova", "Oleiros", "Penamacor", "Sertã", "Vila Velha de Ródão"],
+    "Coimbra": ["Arganil", "Cantanhede", "Coimbra", "Condeixa-a-Nova", "Figueira da Foz", "Lousã", "Mira", "Montemor-o-Velho", "Oliveira do Hospital", "Soure"],
+    "Évora": ["Alandroal", "Arraiolos", "Borba", "Estremoz", "Évora", "Montemor-o-Novo", "Moura", "Redondo", "Reguengos de Monsaraz", "Viana do Alentejo"],
+    "Faro": ["Albufeira", "Faro", "Lagoa", "Loulé", "Olhão", "Portimão", "Silves", "Tavira", "Vila do Bispo", "Vila Real de Santo António"],
+    "Guarda": ["Aguiar da Beira", "Almeida", "Celorico da Beira", "Figueira de Castelo Rodrigo", "Fornos de Algodres", "Guarda", "Manteigas", "Sabugal", "Trancoso"],
+    "Leiria": ["Alcobaça", "Alvaiázere", "Batalha", "Caldas da Rainha", "Leiria", "Marinha Grande", "Nazaré", "Óbidos", "Pombal", "Porto de Mós"],
+    "Lisboa": ["Alenquer", "Amadora", "Cascais", "Lisboa", "Loures", "Mafra", "Odivelas", "Oeiras", "Sintra", "Vila Franca de Xira"],
+    "Portalegre": ["Alter do Chão", "Arronches", "Campo Maior", "Castelo de Vide", "Crato", "Elvas", "Fronteira", "Marvão", "Portalegre", "Sousel"],
+    "Porto": ["Amarante", "Felgueiras", "Gondomar", "Maia", "Matosinhos", "Porto", "Póvoa de Varzim", "Santo Tirso", "Valongo", "Vila Nova de Gaia"],
+    "Santarém": ["Abrantes", "Alcanena", "Almeirim", "Benavente", "Cartaxo", "Chamusca", "Coruche", "Ourém", "Santarém", "Tomar"],
+    "Setúbal": ["Alcácer do Sal", "Alcochete", "Almada", "Barreiro", "Moita", "Montijo", "Palmela", "Seixal", "Sesimbra", "Setúbal"],
+    "Viana do Castelo": ["Arcos de Valdevez", "Caminha", "Melgaço", "Monção", "Ponte da Barca", "Ponte de Lima", "Valença", "Viana do Castelo", "Vila Nova de Cerveira"],
+    "Vila Real": ["Alijó", "Boticas", "Chaves", "Mesão Frio", "Mondim de Basto", "Peso da Régua", "Sabrosa", "Valpaços", "Vila Pouca de Aguiar", "Vila Real"],
+    "Viseu": ["Carregal do Sal", "Castro Daire", "Lamego", "Mangualde", "Nelas", "Oliveira de Frades", "Sátão", "Tondela", "Viseu", "Vouzela"]
+  }
+  
