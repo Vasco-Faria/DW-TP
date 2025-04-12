@@ -4,6 +4,30 @@ import random
 import json
 from datetime import datetime, timedelta
 
+
+
+# ---------- Funções Utilitárias ----------
+
+def carregar_json(caminho):
+    with open(caminho, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+def gerar_email(nome, sobrenome, dominios, existentes):
+    base = f"{nome}.{sobrenome}".lower()
+    dominio = random.choice(dominios)
+    email = f"{base}@{dominio}"
+    while email in existentes:
+        email = f"{base}{random.randint(1, 999)}@{dominio}"
+    return email
+
+# ---------- Carregamento de Dados ----------
+produtos_fisicos = carregar_json('dados/produtos_fisicos.json')
+produtos_online = carregar_json('dados/produtos_online.json')
+categorias_fisicas = carregar_json('dados/categorias_fisicas.json')
+categorias_online = carregar_json('dados/categorias_online.json')
+
+
+
 # Inicializar Faker
 fake = Faker('pt_PT')
 
@@ -15,110 +39,18 @@ equivalencia_clientes = df_clientes[['Nome', 'Profissão', 'EstadoCivil', 'Sexo'
 equivalencia_clientes['customer_id'] = [f'C{i+100}' for i in range(len(df_clientes))]
 equivalencia_clientes.to_csv('equivalencia_clientes.csv', index=False)
 
-# 2. Definir Produtos e Categorias (Expandido com Mais 150 Produtos)
-# Produtos para a Loja Física (nomenclatura inconsistente, simulando registos manuais)
-produtos_fisicos = [
-    # Produtos já existentes
-    'Rato Logitech MX Master', 'Logitech Rato MX Anywhere', 'Teclado Mecânico Corsair K70', 'Teclado Gaming Razer BlackWidow',
-    'Monitor Dell 24"', 'Monitor 27 Polegadas HP', 'Headset Gamer HyperX Cloud', 'Headset Gaming SteelSeries Arctis',
-    'Smartphone Samsung Galaxy S10', 'Smartphone Apple iPhone 11', 'Rato Razer DeathAdder', 'Teclado Logitech G Pro',
-    'Monitor 24" Acer', 'Headset Logitech G432', 'Smartphone Xiaomi Redmi Note 9', 'Rato Corsair Dark Core',
-    'Teclado Mecânico Ducky One 2', 'Monitor 32" LG', 'Headset Razer Kraken', 'Smartphone Huawei P30',
-    'Rato SteelSeries Rival 3', 'Teclado Gaming Keychron K8', 'Monitor 27" ASUS', 'Headset Corsair Void Pro',
-    'Smartphone Google Pixel 4', 'Rato HyperX Pulsefire', 'Teclado Logitech MX Keys', 'Monitor Dell UltraSharp 27"',
-    'Headset Sennheiser HD 450BT', 'Smartphone Samsung Galaxy A51', 'Rato Logitech G502', 'Teclado Razer Huntsman',
-    'Monitor 24 Polegadas Samsung', 'Headset SteelSeries Siberia', 'Smartphone iPhone 12',
-    # Novos produtos (150 adicionais)
-    'Rato Logitech G203', 'Teclado Corsair K55', 'Monitor 22" AOC', 'Headset JBL Quantum 100', 'Smartphone Samsung Galaxy S20',
-    'Rato Razer Viper', 'Teclado Mecânico Redragon K552', 'Monitor 27 Polegadas LG', 'Headset Logitech G Pro X', 'Smartphone iPhone 13',
-    'Rato Corsair Harpoon', 'Teclado Gaming SteelSeries Apex 5', 'Monitor 24" BenQ', 'Headset HyperX Cloud Stinger', 'Smartphone Xiaomi 11T',
-    'Rato SteelSeries Aerox 3', 'Teclado Logitech K380', 'Monitor 32 Polegadas Dell', 'Headset Razer BlackShark V2', 'Smartphone Huawei Mate 40',
-    'Rato HyperX Pulsefire Dart', 'Teclado Ducky Shine 7', 'Monitor 27" Acer Predator', 'Headset Corsair HS60', 'Smartphone Google Pixel 5',
-    'Rato Logitech G305', 'Teclado Razer Ornata V2', 'Monitor 24 Polegadas HP', 'Headset Sennheiser GSP 300', 'Smartphone Samsung Galaxy Note 20',
-    'Webcam Logitech C920', 'Placa Gráfica NVIDIA RTX 3060', 'SSD Samsung 970 EVO 1TB', 'Impressora HP DeskJet 2720', 'Smartwatch Apple Watch Series 6',
-    'Webcam Razer Kiyo', 'Placa Gráfica ASUS RTX 3070', 'SSD Kingston A2000 500GB', 'Impressora Epson EcoTank L3150', 'Smartwatch Samsung Galaxy Watch 4',
-    'Rato Microsoft Surface Precision', 'Teclado Mecânico Kinesis Freestyle', 'Monitor 34" LG UltraWide', 'Headset Bose QuietComfort 35', 'Smartphone OnePlus 9',
-    'Rato ASUS ROG Chakram', 'Teclado Gaming Cooler Master CK552', 'Monitor 27 Polegadas MSI', 'Headset Sony WH-CH710N', 'Smartphone Oppo Find X3',
-    'Webcam Logitech StreamCam', 'Placa Gráfica MSI RTX 3080', 'SSD Crucial MX500 1TB', 'Impressora Canon PIXMA G6020', 'Smartwatch Huawei Watch GT 3',
-    'Rato HP Spectre 700', 'Teclado Logitech Craft', 'Monitor 24" Philips', 'Headset JBL Live 650BTNC', 'Smartphone Vivo Y70',
-    'Rato Corsair Scimitar', 'Teclado Gaming Anne Pro 2', 'Monitor 32" Samsung Odyssey G5', 'Headset SteelSeries Arctis 9', 'Smartphone Nokia 8.3',
-    'Webcam Microsoft LifeCam HD', 'Placa Gráfica Gigabyte RTX 3060 Ti', 'SSD WD Blue SN550 1TB', 'Impressora Brother HL-L2350DW', 'Smartwatch Fitbit Versa 3',
-    'Rato Razer Basilisk V3', 'Teclado Corsair K100 RGB', 'Monitor 27" Dell Alienware', 'Headset HyperX Cloud Alpha', 'Smartphone Samsung Galaxy Z Fold 3',
-    'Rato Logitech G703', 'Teclado Gaming G.Skill Ripjaws KM570', 'Monitor 24 Polegadas ASUS ROG', 'Headset Razer Barracuda X', 'Smartphone iPhone 14',
-    'Webcam Logitech Brio', 'Placa Gráfica NVIDIA GTX 1660 Super', 'SSD Samsung 980 Pro 2TB', 'Impressora HP LaserJet Pro M15w', 'Smartwatch Garmin Forerunner 245',
-    'Rato SteelSeries Sensei 310', 'Teclado Ducky One 3', 'Monitor 27 Polegadas AOC Agon', 'Headset Corsair Virtuoso RGB', 'Smartphone Xiaomi 12',
-    'Rato HyperX Pulsefire Haste', 'Teclado Logitech G915 TKL', 'Monitor 32" HP Omen', 'Headset Sennheiser Momentum 3', 'Smartphone Google Pixel 6',
-    'Rato Corsair Katar Pro', 'Teclado Gaming Razer Cynosa V2', 'Monitor 24" LG UltraGear', 'Headset SteelSeries Arctis 1', 'Smartphone Huawei P40',
-    'Webcam Razer Kiyo Pro', 'Placa Gráfica ASUS TUF RTX 3090', 'SSD Kingston NV2 1TB', 'Impressora Epson WorkForce WF-110', 'Smartwatch Apple Watch Series 7',
-    'Rato Logitech MX Vertical', 'Teclado Corsair K65 Mini', 'Monitor 27" BenQ Mobiuz', 'Headset JBL Quantum 400', 'Smartphone Samsung Galaxy S21',
-    'Rato Razer Naga Pro', 'Teclado Gaming Keychron K4', 'Monitor 32 Polegadas Acer', 'Headset HyperX Cloud Flight', 'Smartphone OnePlus 10 Pro',
-    'Rato SteelSeries Prime', 'Teclado Logitech K780', 'Monitor 24 Polegadas Dell UltraSharp', 'Headset Bose SoundLink', 'Smartphone Oppo Reno 6'
-]
-categorias_fisicas = [
-    'Acessórios de Computador', 'Monitores e Ecrãs', 'Smartphones e Tablets', 'Áudio e Headsets', 'Teclados Gaming',
-    'Webcams', 'Placas Gráficas', 'Armazenamento SSD', 'Impressoras', 'Smartwatches'
-]
-
-# Produtos para a Loja Online (nomenclatura mais padronizada, simulando sistema de e-commerce)
-produtos_online = [
-    # Produtos já existentes
-    'Logitech MX Master 3 Mouse', 'Logitech MX Anywhere 3 Mouse', 'Corsair K70 RGB MK.2 Keyboard', 'Razer BlackWidow V3 Keyboard',
-    'Dell S2421HGF 24" Monitor', 'HP 27f 27" Monitor', 'HyperX Cloud II Headset', 'SteelSeries Arctis 7 Headset',
-    'Samsung Galaxy S10 Smartphone', 'Apple iPhone 11 Smartphone', 'Razer DeathAdder V2 Mouse', 'Logitech G Pro X Keyboard',
-    'Acer Nitro VG240Y 24" Monitor', 'Logitech G432 Gaming Headset', 'Xiaomi Redmi Note 9 Smartphone', 'Corsair Dark Core RGB Mouse',
-    'Ducky One 2 Mini Keyboard', 'LG 32UN500 32" Monitor', 'Razer Kraken X Headset', 'Huawei P30 Smartphone',
-    'SteelSeries Rival 3 Mouse', 'Keychron K8 Wireless Keyboard', 'ASUS TUF Gaming VG27AQ 27" Monitor', 'Corsair Void Elite RGB Headset',
-    'Google Pixel 4 Smartphone', 'HyperX Pulsefire FPS Pro Mouse', 'Logitech MX Keys Advanced Keyboard', 'Dell UltraSharp U2720Q 27" Monitor',
-    'Sennheiser HD 450BT Headphones', 'Samsung Galaxy A51 Smartphone', 'Logitech G502 Hero Mouse', 'Razer Huntsman Elite Keyboard',
-    'Samsung S24F350 24" Monitor', 'SteelSeries Arctis 5 Headset', 'Apple iPhone 12 Smartphone',
-    'Logitech G Pro Wireless Mouse', 'Corsair K95 RGB Platinum Keyboard', 'AOC CQ32G1 32" Monitor', 'Razer Nari Ultimate Headset',
-    'Samsung Galaxy S20 Smartphone', 'Apple iPhone 13 Smartphone',
-    # Novos produtos (150 adicionais)
-    'Logitech G203 Lightsync Mouse', 'Corsair K55 RGB Keyboard', 'AOC 22V2H 22" Monitor', 'JBL Quantum 100 Headset', 'Samsung Galaxy S20 Smartphone',
-    'Razer Viper Ultimate Mouse', 'Redragon K552 Kumara Keyboard', 'LG 27QN600 27" Monitor', 'Logitech G Pro X Headset', 'Apple iPhone 13 Smartphone',
-    'Corsair Harpoon RGB Mouse', 'SteelSeries Apex 5 Keyboard', 'BenQ Zowie XL2411P 24" Monitor', 'HyperX Cloud Stinger Core Headset', 'Xiaomi 11T Pro Smartphone',
-    'SteelSeries Aerox 3 Wireless Mouse', 'Logitech K380 Bluetooth Keyboard', 'Dell P3221D 32" Monitor', 'Razer BlackShark V2 X Headset', 'Huawei Mate 40 Pro Smartphone',
-    'HyperX Pulsefire Dart Mouse', 'Ducky Shine 7 Keyboard', 'Acer Predator XB273U 27" Monitor', 'Corsair HS60 Pro Headset', 'Google Pixel 5 Smartphone',
-    'Logitech G305 Lightspeed Mouse', 'Razer Ornata V2 Keyboard', 'HP 24mh 24" Monitor', 'Sennheiser GSP 300 Headset', 'Samsung Galaxy Note 20 Ultra Smartphone',
-    'Logitech C920 HD Pro Webcam', 'NVIDIA GeForce RTX 3060 Graphics Card', 'Samsung 970 EVO Plus 1TB SSD', 'HP DeskJet 2720 Printer', 'Apple Watch Series 6 Smartwatch',
-    'Razer Kiyo Streaming Webcam', 'ASUS ROG Strix RTX 3070 Graphics Card', 'Kingston A2000 500GB SSD', 'Epson EcoTank L3150 Printer', 'Samsung Galaxy Watch 4 Smartwatch',
-    'Microsoft Surface Precision Mouse', 'Kinesis Freestyle Edge Keyboard', 'LG 34WN80C 34" UltraWide Monitor', 'Bose QuietComfort 35 II Headphones', 'OnePlus 9 Smartphone',
-    'ASUS ROG Chakram Mouse', 'Cooler Master CK552 Keyboard', 'MSI Optix MAG272CQR 27" Monitor', 'Sony WH-CH710N Headphones', 'Oppo Find X3 Pro Smartphone',
-    'Logitech StreamCam Webcam', 'MSI GeForce RTX 3080 Graphics Card', 'Crucial MX500 1TB SSD', 'Canon PIXMA G6020 Printer', 'Huawei Watch GT 3 Smartwatch',
-    'HP Spectre 700 Mouse', 'Logitech Craft Advanced Keyboard', 'Philips 243V7Q 24" Monitor', 'JBL Live 650BTNC Headphones', 'Vivo Y70 Smartphone',
-    'Corsair Scimitar RGB Elite Mouse', 'Anne Pro 2 Keyboard', 'Samsung Odyssey G5 32" Monitor', 'SteelSeries Arctis 9 Wireless Headset', 'Nokia 8.3 5G Smartphone',
-    'Microsoft LifeCam HD-3000 Webcam', 'Gigabyte RTX 3060 Ti Graphics Card', 'WD Blue SN550 1TB SSD', 'Brother HL-L2350DW Printer', 'Fitbit Versa 3 Smartwatch',
-    'Razer Basilisk V3 Mouse', 'Corsair K100 RGB Optical Keyboard', 'Dell Alienware AW2721D 27" Monitor', 'HyperX Cloud Alpha S Headset', 'Samsung Galaxy Z Fold 3 Smartphone',
-    'Logitech G703 Lightspeed Mouse', 'G.Skill Ripjaws KM570 Keyboard', 'ASUS ROG Swift PG259QN 24" Monitor', 'Razer Barracuda X Headset', 'Apple iPhone 14 Smartphone',
-    'Logitech Brio Ultra HD Webcam', 'NVIDIA GTX 1660 Super Graphics Card', 'Samsung 980 Pro 2TB SSD', 'HP LaserJet Pro M15w Printer', 'Garmin Forerunner 245 Smartwatch',
-    'SteelSeries Sensei 310 Mouse', 'Ducky One 3 Matcha Keyboard', 'AOC Agon AG273QCG 27" Monitor', 'Corsair Virtuoso RGB Wireless Headset', 'Xiaomi 12 Pro Smartphone',
-    'HyperX Pulsefire Haste Mouse', 'Logitech G915 TKL Lightspeed Keyboard', 'HP Omen 32" Monitor', 'Sennheiser Momentum 3 Wireless Headphones', 'Google Pixel 6 Pro Smartphone',
-    'Corsair Katar Pro XT Mouse', 'Razer Cynosa V2 Keyboard', 'LG UltraGear 24GN600 24" Monitor', 'SteelSeries Arctis 1 Wireless Headset', 'Huawei P40 Pro Smartphone',
-    'Razer Kiyo Pro Ultra Webcam', 'ASUS TUF Gaming RTX 3090 Graphics Card', 'Kingston NV2 1TB SSD', 'Epson WorkForce WF-110 Printer', 'Apple Watch Series 7 Smartwatch',
-    'Logitech MX Vertical Mouse', 'Corsair K65 RGB Mini Keyboard', 'BenQ Mobiuz EX2710 27" Monitor', 'JBL Quantum 400 Headset', 'Samsung Galaxy S21 Ultra Smartphone',
-    'Razer Naga Pro Mouse', 'Keychron K4 Wireless Keyboard', 'Acer 32" Predator XB323U Monitor', 'HyperX Cloud Flight Wireless Headset', 'OnePlus 10 Pro Smartphone',
-    'SteelSeries Prime Wireless Mouse', 'Logitech K780 Multi-Device Keyboard', 'Dell UltraSharp U2422H 24" Monitor', 'Bose SoundLink Around-Ear Headphones', 'Oppo Reno 6 Pro Smartphone',
-    'Logitech G604 Lightspeed Mouse', 'Corsair Strafe RGB MK.2 Keyboard', 'Samsung Odyssey G7 28" Monitor', 'Razer Hammerhead True Wireless Earbuds', 'Samsung Galaxy S22 Smartphone',
-    'Razer Orochi V2 Mouse', 'Ducky Mecha Mini Keyboard', 'AOC 24G2U 24" Monitor', 'Sony WH-1000XM4 Headphones', 'Apple iPhone 14 Pro Smartphone',
-    'HyperX Pulsefire Surge Mouse', 'Logitech G613 Wireless Keyboard', 'LG 27GP950 27" Monitor', 'Corsair HS70 Pro Headset', 'Xiaomi 13 Smartphone',
-    'SteelSeries Rival 5 Mouse', 'Razer Pro Type Ultra Keyboard', 'ASUS ProArt PA278CV 27" Monitor', 'Sennheiser HD 560S Headphones', 'Google Pixel 7 Smartphone'
-]
-categorias_online = [
-    'Gaming Mice', 'Mechanical Keyboards', 'Gaming Monitors', 'Headsets', 'Smartphones',
-    'Webcams', 'Graphics Cards', 'SSDs', 'Printers', 'Smartwatches', 'Wireless Earbuds', 'Professional Monitors'
-]
 
 # 3. Gerar Registos da Loja Física (Fonte 1: Excel)
 vendas_fisicas = []
-for i in range(5000):  # 5.000 transações entre 2010 e 2020
+for i in range(5000):
     data = fake.date_between_dates(date_start=datetime(2010, 1, 1), date_end=datetime(2020, 12, 31))
     cliente = equivalencia_clientes.iloc[random.randint(0, len(equivalencia_clientes)-1)]
     venda = {
         'Data_Venda': data.strftime('%d/%m/%Y'),
-        'Produto': random.choice(produtos_fisicos),
-        'Categoria': random.choice(categorias_fisicas),
+        'Produto': random.choice(produtos_fisicos['produtos_fisicos']),  # Access the list
+        'Categoria': random.choice(categorias_fisicas['categorias_fisicas']),  # Access the list	
         'Quantidade': random.randint(1, 5),
-        'Preço': round(random.uniform(20, 1500), 2),  # Aumentei o intervalo para incluir produtos mais caros
+        'Preço': round(random.uniform(20, 1500), 2),
         'Cliente_Nome': cliente['Nome'],
         'Concelho': cliente['Concelho'],
         'Canal': 'Loja Física'
@@ -138,8 +70,8 @@ for i in range(3000):  # 3.000 transações entre 2021 e 2025
         'date': data.strftime('%Y-%m-%d'),
         'products': [{
             'product_id': f'P{random.randint(1, 1000)}',
-            'name': random.choice(produtos_online),
-            'category': random.choice(categorias_online),
+            'name': random.choice(produtos_online['produtos_online']),  # Access the list
+            'category': random.choice(categorias_online['categorias_online']),  # Access the list	
             'price': round(random.uniform(20, 1500), 2),
             'quantity': random.randint(1, 5)
         }],
