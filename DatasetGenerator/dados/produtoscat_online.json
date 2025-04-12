@@ -1,0 +1,720 @@
+{
+  "produtos_categorizados": [
+    {
+      "nome": "Logitech MX Master 3 Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Logitech MX Anywhere 3 Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Corsair K70 RGB MK.2 Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Razer BlackWidow V3 Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Dell S2421HGF 24\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "HP 27f 27\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "HyperX Cloud II Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "SteelSeries Arctis 7 Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Samsung Galaxy S10 Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Apple iPhone 11 Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Razer DeathAdder V2 Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Logitech G Pro X Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Acer Nitro VG240Y 24\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Logitech G432 Gaming Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Xiaomi Redmi Note 9 Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Corsair Dark Core RGB Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Ducky One 2 Mini Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "LG 32UN500 32\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Razer Kraken X Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Huawei P30 Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "SteelSeries Rival 3 Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Keychron K8 Wireless Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "ASUS TUF Gaming VG27AQ 27\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Corsair Void Elite RGB Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Google Pixel 4 Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "HyperX Pulsefire FPS Pro Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Logitech MX Keys Advanced Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Dell UltraSharp U2720Q 27\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Sennheiser HD 450BT Headphones",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Samsung Galaxy A51 Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Logitech G502 Hero Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Razer Huntsman Elite Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Samsung S24F350 24\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "SteelSeries Arctis 5 Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Apple iPhone 12 Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Logitech G Pro Wireless Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Corsair K95 RGB Platinum Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "AOC CQ32G1 32\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Razer Nari Ultimate Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Samsung Galaxy S20 Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Apple iPhone 13 Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Logitech G203 Lightsync Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Corsair K55 RGB Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "AOC 22V2H 22\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "JBL Quantum 100 Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Razer Viper Ultimate Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Redragon K552 Kumara Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "LG 27QN600 27\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Logitech G Pro X Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Corsair Harpoon RGB Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "SteelSeries Apex 5 Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "BenQ Zowie XL2411P 24\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "HyperX Cloud Stinger Core Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Xiaomi 11T Pro Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "SteelSeries Aerox 3 Wireless Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Logitech K380 Bluetooth Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Dell P3221D 32\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Razer BlackShark V2 X Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Huawei Mate 40 Pro Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "HyperX Pulsefire Dart Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Ducky Shine 7 Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Acer Predator XB273U 27\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Corsair HS60 Pro Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Google Pixel 5 Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Logitech G305 Lightspeed Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Razer Ornata V2 Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "HP 24mh 24\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Sennheiser GSP 300 Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Samsung Galaxy Note 20 Ultra Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Logitech C920 HD Pro Webcam",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "NVIDIA GeForce RTX 3060 Graphics Card",
+      "categoria": "Componentes"
+    },
+    {
+      "nome": "Samsung 970 EVO Plus 1TB SSD",
+      "categoria": "Armazenamento"
+    },
+    {
+      "nome": "HP DeskJet 2720 Printer",
+      "categoria": "Impressoras"
+    },
+    {
+      "nome": "Apple Watch Series 6 Smartwatch",
+      "categoria": "Wearables"
+    },
+    {
+      "nome": "Razer Kiyo Streaming Webcam",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "ASUS ROG Strix RTX 3070 Graphics Card",
+      "categoria": "Componentes"
+    },
+    {
+      "nome": "Kingston A2000 500GB SSD",
+      "categoria": "Armazenamento"
+    },
+    {
+      "nome": "Epson EcoTank L3150 Printer",
+      "categoria": "Impressoras"
+    },
+    {
+      "nome": "Samsung Galaxy Watch 4 Smartwatch",
+      "categoria": "Wearables"
+    },
+    {
+      "nome": "Microsoft Surface Precision Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Kinesis Freestyle Edge Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "LG 34WN80C 34\" UltraWide Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Bose QuietComfort 35 II Headphones",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "OnePlus 9 Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "ASUS ROG Chakram Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Cooler Master CK552 Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "MSI Optix MAG272CQR 27\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Sony WH-CH710N Headphones",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Oppo Find X3 Pro Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Logitech StreamCam Webcam",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "MSI GeForce RTX 3080 Graphics Card",
+      "categoria": "Componentes"
+    },
+    {
+      "nome": "Crucial MX500 1TB SSD",
+      "categoria": "Armazenamento"
+    },
+    {
+      "nome": "Canon PIXMA G6020 Printer",
+      "categoria": "Impressoras"
+    },
+    {
+      "nome": "Huawei Watch GT 3 Smartwatch",
+      "categoria": "Wearables"
+    },
+    {
+      "nome": "HP Spectre 700 Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Logitech Craft Advanced Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Philips 243V7Q 24\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "JBL Live 650BTNC Headphones",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Vivo Y70 Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Corsair Scimitar RGB Elite Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Anne Pro 2 Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Samsung Odyssey G5 32\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "SteelSeries Arctis 9 Wireless Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Nokia 8.3 5G Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Microsoft LifeCam HD-3000 Webcam",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Gigabyte RTX 3060 Ti Graphics Card",
+      "categoria": "Componentes"
+    },
+    {
+      "nome": "WD Blue SN550 1TB SSD",
+      "categoria": "Armazenamento"
+    },
+    {
+      "nome": "Brother HL-L2350DW Printer",
+      "categoria": "Impressoras"
+    },
+    {
+      "nome": "Fitbit Versa 3 Smartwatch",
+      "categoria": "Wearables"
+    },
+    {
+      "nome": "Razer Basilisk V3 Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Corsair K100 RGB Optical Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Dell Alienware AW2721D 27\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "HyperX Cloud Alpha S Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Samsung Galaxy Z Fold 3 Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Logitech G703 Lightspeed Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "G.Skill Ripjaws KM570 Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "ASUS ROG Swift PG259QN 24\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Razer Barracuda X Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Apple iPhone 14 Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Logitech Brio Ultra HD Webcam",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "NVIDIA GTX 1660 Super Graphics Card",
+      "categoria": "Componentes"
+    },
+    {
+      "nome": "Samsung 980 Pro 2TB SSD",
+      "categoria": "Armazenamento"
+    },
+    {
+      "nome": "HP LaserJet Pro M15w Printer",
+      "categoria": "Impressoras"
+    },
+    {
+      "nome": "Garmin Forerunner 245 Smartwatch",
+      "categoria": "Wearables"
+    },
+    {
+      "nome": "SteelSeries Sensei 310 Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Ducky One 3 Matcha Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "AOC Agon AG273QCG 27\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Corsair Virtuoso RGB Wireless Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Xiaomi 12 Pro Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "HyperX Pulsefire Haste Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Logitech G915 TKL Lightspeed Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "HP Omen 32\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Sennheiser Momentum 3 Wireless Headphones",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Google Pixel 6 Pro Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Corsair Katar Pro XT Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Razer Cynosa V2 Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "LG UltraGear 24GN600 24\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "SteelSeries Arctis 1 Wireless Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Huawei P40 Pro Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Razer Kiyo Pro Ultra Webcam",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "ASUS TUF Gaming RTX 3090 Graphics Card",
+      "categoria": "Componentes"
+    },
+    {
+      "nome": "Kingston NV2 1TB SSD",
+      "categoria": "Armazenamento"
+    },
+    {
+      "nome": "Epson WorkForce WF-110 Printer",
+      "categoria": "Impressoras"
+    },
+    {
+      "nome": "Apple Watch Series 7 Smartwatch",
+      "categoria": "Wearables"
+    },
+    {
+      "nome": "Logitech MX Vertical Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Corsair K65 RGB Mini Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "BenQ Mobiuz EX2710 27\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "JBL Quantum 400 Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Samsung Galaxy S21 Ultra Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Razer Naga Pro Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Keychron K4 Wireless Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Acer 32\" Predator XB323U Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "HyperX Cloud Flight Wireless Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "OnePlus 10 Pro Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "SteelSeries Prime Wireless Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Logitech K780 Multi-Device Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Dell UltraSharp U2422H 24\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Bose SoundLink Around-Ear Headphones",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Oppo Reno 6 Pro Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Logitech G604 Lightspeed Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Corsair Strafe RGB MK.2 Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Samsung Odyssey G7 28\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Razer Hammerhead True Wireless Earbuds",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Samsung Galaxy S22 Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Razer Orochi V2 Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Ducky Mecha Mini Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "AOC 24G2U 24\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Sony WH-1000XM4 Headphones",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Apple iPhone 14 Pro Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "HyperX Pulsefire Surge Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Logitech G613 Wireless Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "LG 27GP950 27\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Corsair HS70 Pro Headset",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Xiaomi 13 Smartphone",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "SteelSeries Rival 5 Mouse",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Razer Pro Type Ultra Keyboard",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "ASUS ProArt PA278CV 27\" Monitor",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Sennheiser HD 560S Headphones",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Google Pixel 7 Smartphone",
+      "categoria": "Smartphones"
+    }
+  ]
+}

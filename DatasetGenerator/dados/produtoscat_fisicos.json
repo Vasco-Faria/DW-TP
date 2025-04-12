@@ -1,0 +1,624 @@
+{
+  "produtos_categorizados": [
+    {
+      "nome": "Rato Logitech MX Master",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Logitech Rato MX Anywhere",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Mecânico Corsair K70",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Gaming Razer BlackWidow",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor Dell 24\"",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Monitor 27 Polegadas HP",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset Gamer HyperX Cloud",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Headset Gaming SteelSeries Arctis",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone Samsung Galaxy S10",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Smartphone Apple iPhone 11",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Rato Razer DeathAdder",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Logitech G Pro",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 24\" Acer",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset Logitech G432",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone Xiaomi Redmi Note 9",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Rato Corsair Dark Core",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Mecânico Ducky One 2",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 32\" LG",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset Razer Kraken",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone Huawei P30",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Rato SteelSeries Rival 3",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Gaming Keychron K8",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 27\" ASUS",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset Corsair Void Pro",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone Google Pixel 4",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Rato HyperX Pulsefire",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Logitech MX Keys",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor Dell UltraSharp 27\"",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset Sennheiser HD 450BT",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone Samsung Galaxy A51",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Rato Logitech G502",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Razer Huntsman",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 24 Polegadas Samsung",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset SteelSeries Siberia",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone iPhone 12",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Rato Logitech G203",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Corsair K55",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 22\" AOC",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset JBL Quantum 100",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone Samsung Galaxy S20",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Rato Razer Viper",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Mecânico Redragon K552",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 27 Polegadas LG",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset Logitech G Pro X",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone iPhone 13",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Rato Corsair Harpoon",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Gaming SteelSeries Apex 5",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 24\" BenQ",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset HyperX Cloud Stinger",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone Xiaomi 11T",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Rato SteelSeries Aerox 3",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Logitech K380",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 32 Polegadas Dell",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset Razer BlackShark V2",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone Huawei Mate 40",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Rato HyperX Pulsefire Dart",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Ducky Shine 7",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 27\" Acer Predator",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset Corsair HS60",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone Google Pixel 5",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Rato Logitech G305",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Razer Ornata V2",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 24 Polegadas HP",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset Sennheiser GSP 300",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone Samsung Galaxy Note 20",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Webcam Logitech C920",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Placa Gráfica NVIDIA RTX 3060",
+      "categoria": "Componentes"
+    },
+    {
+      "nome": "SSD Samsung 970 EVO 1TB",
+      "categoria": "Armazenamento"
+    },
+    {
+      "nome": "Impressora HP DeskJet 2720",
+      "categoria": "Impressoras"
+    },
+    {
+      "nome": "Smartwatch Apple Watch Series 6",
+      "categoria": "Wearables"
+    },
+    {
+      "nome": "Webcam Razer Kiyo",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Placa Gráfica ASUS RTX 3070",
+      "categoria": "Componentes"
+    },
+    {
+      "nome": "SSD Kingston A2000 500GB",
+      "categoria": "Armazenamento"
+    },
+    {
+      "nome": "Impressora Epson EcoTank L3150",
+      "categoria": "Impressoras"
+    },
+    {
+      "nome": "Smartwatch Samsung Galaxy Watch 4",
+      "categoria": "Wearables"
+    },
+    {
+      "nome": "Rato Microsoft Surface Precision",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Mecânico Kinesis Freestyle",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 34\" LG UltraWide",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset Bose QuietComfort 35",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone OnePlus 9",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Rato ASUS ROG Chakram",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Gaming Cooler Master CK552",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 27 Polegadas MSI",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset Sony WH-CH710N",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone Oppo Find X3",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Webcam Logitech StreamCam",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Placa Gráfica MSI RTX 3080",
+      "categoria": "Componentes"
+    },
+    {
+      "nome": "SSD Crucial MX500 1TB",
+      "categoria": "Armazenamento"
+    },
+    {
+      "nome": "Impressora Canon PIXMA G6020",
+      "categoria": "Impressoras"
+    },
+    {
+      "nome": "Smartwatch Huawei Watch GT 3",
+      "categoria": "Wearables"
+    },
+    {
+      "nome": "Rato HP Spectre 700",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Logitech Craft",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 24\" Philips",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset JBL Live 650BTNC",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone Vivo Y70",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Rato Corsair Scimitar",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Gaming Anne Pro 2",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 32\" Samsung Odyssey G5",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset SteelSeries Arctis 9",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone Nokia 8.3",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Webcam Microsoft LifeCam HD",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Placa Gráfica Gigabyte RTX 3060 Ti",
+      "categoria": "Componentes"
+    },
+    {
+      "nome": "SSD WD Blue SN550 1TB",
+      "categoria": "Armazenamento"
+    },
+    {
+      "nome": "Impressora Brother HL-L2350DW",
+      "categoria": "Impressoras"
+    },
+    {
+      "nome": "Smartwatch Fitbit Versa 3",
+      "categoria": "Wearables"
+    },
+    {
+      "nome": "Rato Razer Basilisk V3",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Corsair K100 RGB",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 27\" Dell Alienware",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset HyperX Cloud Alpha",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone Samsung Galaxy Z Fold 3",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Rato Logitech G703",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Gaming G.Skill Ripjaws KM570",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 24 Polegadas ASUS ROG",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset Razer Barracuda X",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone iPhone 14",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Webcam Logitech Brio",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Placa Gráfica NVIDIA GTX 1660 Super",
+      "categoria": "Componentes"
+    },
+    {
+      "nome": "SSD Samsung 980 Pro 2TB",
+      "categoria": "Armazenamento"
+    },
+    {
+      "nome": "Impressora HP LaserJet Pro M15w",
+      "categoria": "Impressoras"
+    },
+    {
+      "nome": "Smartwatch Garmin Forerunner 245",
+      "categoria": "Wearables"
+    },
+    {
+      "nome": "Rato SteelSeries Sensei 310",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Ducky One 3",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 27 Polegadas AOC Agon",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset Corsair Virtuoso RGB",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone Xiaomi 12",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Rato HyperX Pulsefire Haste",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Logitech G915 TKL",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 32\" HP Omen",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset Sennheiser Momentum 3",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone Google Pixel 6",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Rato Corsair Katar Pro",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Gaming Razer Cynosa V2",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 24\" LG UltraGear",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset SteelSeries Arctis 1",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone Huawei P40",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Webcam Razer Kiyo Pro",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Placa Gráfica ASUS TUF RTX 3090",
+      "categoria": "Componentes"
+    },
+    {
+      "nome": "SSD Kingston NV2 1TB",
+      "categoria": "Armazenamento"
+    },
+    {
+      "nome": "Impressora Epson WorkForce WF-110",
+      "categoria": "Impressoras"
+    },
+    {
+      "nome": "Smartwatch Apple Watch Series 7",
+      "categoria": "Wearables"
+    },
+    {
+      "nome": "Rato Logitech MX Vertical",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Corsair K65 Mini",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 27\" BenQ Mobiuz",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset JBL Quantum 400",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone Samsung Galaxy S21",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Rato Razer Naga Pro",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Gaming Keychron K4",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 32 Polegadas Acer",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset HyperX Cloud Flight",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone OnePlus 10 Pro",
+      "categoria": "Smartphones"
+    },
+    {
+      "nome": "Rato SteelSeries Prime",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Teclado Logitech K780",
+      "categoria": "Perifericos"
+    },
+    {
+      "nome": "Monitor 24 Polegadas Dell UltraSharp",
+      "categoria": "Monitores"
+    },
+    {
+      "nome": "Headset Bose SoundLink",
+      "categoria": "Audio"
+    },
+    {
+      "nome": "Smartphone Oppo Reno 6",
+      "categoria": "Smartphones"
+    }
+  ]
+}

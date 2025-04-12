@@ -21,11 +21,8 @@ def gerar_email(nome, sobrenome, dominios, existentes):
     return email
 
 # ---------- Carregamento de Dados ----------
-produtos_fisicos = carregar_json('dados/produtos_fisicos.json')
-produtos_online = carregar_json('dados/produtos_online.json')
-categorias_fisicas = carregar_json('dados/categorias_fisicas.json')
-categorias_online = carregar_json('dados/categorias_online.json')
-
+produtos_categorizados_fisicos = carregar_json('dados/produtoscat_fisicos.json')
+produtos_categorizados_online = carregar_json('dados/produtoscat_online.json')
 
 
 # Inicializar Faker
@@ -44,13 +41,15 @@ equivalencia_clientes.to_csv('equivalencia_clientes.csv', index=False)
 vendas_fisicas = []
 for i in range(5000):
     data = fake.date_between_dates(date_start=datetime(2010, 1, 1), date_end=datetime(2020, 12, 31))
-    cliente = equivalencia_clientes.iloc[random.randint(0, len(equivalencia_clientes)-1)]
+    cliente = equivalencia_clientes.iloc[random.randint(0, len(equivalencia_clientes)-1)]  # Obtendo um cliente aleatório
+    produto = random.choice(produtos_categorizados_fisicos['produtos_categorizados'])  # Selecionando um produto aleatório
     venda = {
         'Data_Venda': data.strftime('%d/%m/%Y'),
-        'Produto': random.choice(produtos_fisicos['produtos_fisicos']),  # Access the list
-        'Categoria': random.choice(categorias_fisicas['categorias_fisicas']),  # Access the list	
+        'Produto': produto['nome'],  # Nome do produto
+        'Categoria': produto['categoria'],  # Categoria do produto
         'Quantidade': random.randint(1, 5),
         'Preço': round(random.uniform(20, 1500), 2),
+        'Percentagem_Desconto': random.randint(0, 50),
         'Cliente_Nome': cliente['Nome'],
         'Concelho': cliente['Concelho'],
         'Canal': 'Loja Física'
@@ -65,15 +64,17 @@ vendas_online = []
 for i in range(3000):  # 3.000 transações entre 2021 e 2025
     data = fake.date_between_dates(date_start=datetime(2021, 1, 1), date_end=datetime(2025, 4, 12))
     cliente = equivalencia_clientes.iloc[random.randint(0, len(equivalencia_clientes)-1)]
+    produto = random.choice(produtos_categorizados_online['produtos_categorizados'])  # Selecionando um produto aleatório
     venda = {
         'sale_id': f'S{i+1000}',
         'date': data.strftime('%Y-%m-%d'),
         'products': [{
             'product_id': f'P{random.randint(1, 1000)}',
-            'name': random.choice(produtos_online['produtos_online']),  # Access the list
-            'category': random.choice(categorias_online['categorias_online']),  # Access the list	
+            'name': produto['nome'],  # Access the list
+            'category': produto['categoria'],  # Access the list	
             'price': round(random.uniform(20, 1500), 2),
-            'quantity': random.randint(1, 5)
+            'quantity': random.randint(1, 5),
+            'discount': random.randint(0, 50),
         }],
         'customer_id': cliente['customer_id'],
         'email': cliente['Email'],
