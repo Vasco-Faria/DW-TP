@@ -58,6 +58,7 @@ for _ in range(2000):
 
     data_nascimento = fake.date_of_birth(minimum_age=18, maximum_age=80)
 
+    
     cliente = {
         'Nome': nome_completo,
         'Profissão': random.choice(profissoes),
@@ -65,6 +66,9 @@ for _ in range(2000):
         'Sexo': sexo,
         'Distrito': distrito,
         'Concelho': concelho,
+        'Telefone': fake.phone_number(),
+        'Morada': fake.address(),
+        'CódigoPostal': fake.postcode(),
         'DataNascimento': data_nascimento.strftime('%d/%m/%Y'),
         'Email': email
     }
