@@ -1,0 +1,176 @@
+ProdutoId,Nome,Marca,Categoria
+1,"Rato Logitech MX Master",Logitech,Perifericos
+2,"Logitech Rato MX Anywhere",Logitech,Perifericos
+3,"Teclado Mecânico Corsair K70",Corsair,Perifericos
+4,"Teclado Gaming Razer BlackWidow",Razer,Perifericos
+5,"Monitor Dell 24"",Dell,Monitores
+6,"Monitor 27 Polegadas HP",HP,Monitores
+7,"Headset Gamer HyperX Cloud",HyperX,Audio
+8,"Headset Gaming SteelSeries Arctis",SteelSeries,Audio
+9,"Smartphone Samsung Galaxy S10",Samsung,Smartphones
+10,"Smartphone Apple iPhone 11",Apple,Smartphones
+11,"Rato Razer DeathAdder",Razer,Perifericos
+12,"Teclado Logitech G Pro",Logitech,Perifericos
+13,"Monitor 24" Acer",Acer,Monitores
+14,"Headset Logitech G432",Logitech,Audio
+15,"Smartphone Xiaomi Redmi Note 9",Xiaomi,Smartphones
+16,"Rato Corsair Dark Core",Corsair,Perifericos
+17,"Teclado Mecânico Ducky One 2",Ducky,Perifericos
+18,"Monitor 32" LG",LG,Monitores
+19,"Headset Razer Kraken",Razer,Audio
+20,"Smartphone Huawei P30",Huawei,Smartphones
+21,"Rato SteelSeries Rival 3",SteelSeries,Perifericos
+22,"Teclado Gaming Keychron K8",Keychron,Perifericos
+23,"Monitor 27" ASUS",ASUS,Monitores
+24,"Headset Corsair Void Pro",Corsair,Audio
+25,"Smartphone Google Pixel 4",Google,Smartphones
+26,"Rato HyperX Pulsefire",HyperX,Perifericos
+27,"Teclado Logitech MX Keys",Logitech,Perifericos
+28,"Monitor Dell UltraSharp 27"",Dell,Monitores
+29,"Headset Sennheiser HD 450BT",Sennheiser,Audio
+30,"Smartphone Samsung Galaxy A51",Samsung,Smartphones
+31,"Rato Logitech G502",Logitech,Perifericos
+32,"Teclado Razer Huntsman",Razer,Perifericos
+33,"Monitor 24 Polegadas Samsung",Samsung,Monitores
+34,"Headset SteelSeries Siberia",SteelSeries,Audio
+35,"Smartphone iPhone 12",Apple,Smartphones
+36,"Rato Logitech G203",Logitech,Perifericos
+37,"Teclado Corsair K55",Corsair,Perifericos
+38,"Monitor 22" AOC",AOC,Monitores
+39,"Headset JBL Quantum 100",JBL,Audio
+40,"Smartphone Samsung Galaxy S20",Samsung,Smartphones
+41,"Rato Razer Viper",Razer,Perifericos
+42,"Teclado Mecânico Redragon K552",Redragon,Perifericos
+43,"Monitor 27 Polegadas LG",LG,Monitores
+44,"Headset Logitech G Pro X",Logitech,Audio
+45,"Smartphone iPhone 13",Apple,Smartphones
+46,"Rato Corsair Harpoon",Corsair,Perifericos
+47,"Teclado Gaming SteelSeries Apex 5",SteelSeries,Perifericos
+48,"Monitor 24" BenQ",BenQ,Monitores
+49,"Headset HyperX Cloud Stinger",HyperX,Audio
+50,"Smartphone Xiaomi 11T",Xiaomi,Smartphones
+51,"Rato SteelSeries Aerox 3",SteelSeries,Perifericos
+52,"Teclado Logitech K380",Logitech,Perifericos
+53,"Monitor 32 Polegadas Dell",Dell,Monitores
+54,"Headset Razer BlackShark V2",Razer,Audio
+55,"Smartphone Huawei Mate 40",Huawei,Smartphones
+56,"Rato HyperX Pulsefire Dart",HyperX,Perifericos
+57,"Teclado Ducky Shine 7",Ducky,Perifericos
+58,"Monitor 27" Acer Predator",Acer,Monitores
+59,"Headset Corsair HS60",Corsair,Audio
+60,"Smartphone Google Pixel 5",Google,Smartphones
+61,"Rato Logitech G305",Logitech,Perifericos
+62,"Teclado Razer Ornata V2",Razer,Perifericos
+63,"Monitor 24 Polegadas HP",HP,Monitores
+64,"Headset Sennheiser GSP 300",Sennheiser,Audio
+65,"Smartphone Samsung Galaxy Note 20",Samsung,Smartphones
+66,"Webcam Logitech C920",Logitech,Perifericos
+67,"Placa Gráfica NVIDIA RTX 3060",NVIDIA,Componentes
+68,"SSD Samsung 970 EVO 1TB",Samsung,Armazenamento
+69,"Impressora HP DeskJet 2720",HP,Impressoras
+70,"Smartwatch Apple Watch Series 6",Apple,Wearables
+71,"Webcam Razer Kiyo",Razer,Perifericos
+72,"Placa Gráfica ASUS RTX 3070",ASUS,Componentes
+73,"SSD Kingston A2000 500GB",Kingston,Armazenamento
+74,"Impressora Epson EcoTank L3150",Epson,Impressoras
+75,"Smartwatch Samsung Galaxy Watch 4",Samsung,Wearables
+76,"Rato Microsoft Surface Precision",Microsoft,Perifericos
+77,"Teclado Mecânico Kinesis Freestyle",Kinesis,Perifericos
+78,"Monitor 34" LG UltraWide",LG,Monitores
+79,"Headset Bose QuietComfort 35",Bose,Audio
+80,"Smartphone OnePlus 9",OnePlus,Smartphones
+81,"Rato ASUS ROG Chakram",ASUS,Perifericos
+82,"Teclado Gaming Cooler Master CK552",Cooler,Perifericos
+83,"Monitor 27 Polegadas MSI",MSI,Monitores
+84,"Headset Sony WH-CH710N",Sony,Audio
+85,"Smartphone Oppo Find X3",Oppo,Smartphones
+86,"Webcam Logitech StreamCam",Logitech,Perifericos
+87,"Placa Gráfica MSI RTX 3080",MSI,Componentes
+88,"SSD Crucial MX500 1TB",Crucial,Armazenamento
+89,"Impressora Canon PIXMA G6020",Canon,Impressoras
+90,"Smartwatch Huawei Watch GT 3",Huawei,Wearables
+91,"Rato HP Spectre 700",HP,Perifericos
+92,"Teclado Logitech Craft",Logitech,Perifericos
+93,"Monitor 24" Philips",Philips,Monitores
+94,"Headset JBL Live 650BTNC",JBL,Audio
+95,"Smartphone Vivo Y70",Vivo,Smartphones
+96,"Rato Corsair Scimitar",Corsair,Perifericos
+97,"Teclado Gaming Anne Pro 2",Anne,Perifericos
+98,"Monitor 32" Samsung Odyssey G5",Samsung,Monitores
+99,"Headset SteelSeries Arctis 9",SteelSeries,Audio
+100,"Smartphone Nokia 8.3",Nokia,Smartphones
+101,"Webcam Microsoft LifeCam HD",Microsoft,Perifericos
+102,"Placa Gráfica Gigabyte RTX 3060 Ti",Gigabyte,Componentes
+103,"SSD WD Blue SN550 1TB",WD,Armazenamento
+104,"Impressora Brother HL-L2350DW",Brother,Impressoras
+105,"Smartwatch Fitbit Versa 3",Fitbit,Wearables
+106,"Rato Razer Basilisk V3",Razer,Perifericos
+107,"Teclado Corsair K100 RGB",Corsair,Perifericos
+108,"Monitor 27" Dell Alienware",Dell,Monitores
+109,"Headset HyperX Cloud Alpha",HyperX,Audio
+110,"Smartphone Samsung Galaxy Z Fold 3",Samsung,Smartphones
+111,"Rato Logitech G703",Logitech,Perifericos
+112,"Teclado Gaming G.Skill Ripjaws KM570",G.Skill,Perifericos
+113,"Monitor 24 Polegadas ASUS ROG",ASUS,Monitores
+114,"Headset Razer Barracuda X",Razer,Audio
+115,"Smartphone iPhone 14",Apple,Smartphones
+116,"Webcam Logitech Brio",Logitech,Perifericos
+117,"Placa Gráfica NVIDIA GTX 1660 Super",NVIDIA,Componentes
+118,"SSD Samsung 980 Pro 2TB",Samsung,Armazenamento
+119,"Impressora HP LaserJet Pro M15w",HP,Impressoras
+120,"Smartwatch Garmin Forerunner 245",Garmin,Wearables
+121,"Rato SteelSeries Sensei 310",SteelSeries,Perifericos
+122,"Teclado Ducky One 3",Ducky,Perifericos
+123,"Monitor 27 Polegadas AOC Agon",AOC,Monitores
+124,"Headset Corsair Virtuoso RGB",Corsair,Audio
+125,"Smartphone Xiaomi 12",Xiaomi,Smartphones
+126,"Rato HyperX Pulsefire Haste",HyperX,Perifericos
+127,"Teclado Logitech G915 TKL",Logitech,Perifericos
+128,"Monitor 32" HP Omen",HP,Monitores
+129,"Headset Sennheiser Momentum 3",Sennheiser,Audio
+130,"Smartphone Google Pixel 6",Google,Smartphones
+131,"Rato Corsair Katar Pro",Corsair,Perifericos
+132,"Teclado Gaming Razer Cynosa V2",Razer,Perifericos
+133,"Monitor 24" LG UltraGear",LG,Monitores
+134,"Headset SteelSeries Arctis 1",SteelSeries,Audio
+135,"Smartphone Huawei P40",Huawei,Smartphones
+136,"Webcam Razer Kiyo Pro",Razer,Perifericos
+137,"Placa Gráfica ASUS TUF RTX 3090",ASUS,Componentes
+138,"SSD Kingston NV2 1TB",Kingston,Armazenamento
+139,"Impressora Epson WorkForce WF-110",Epson,Impressoras
+140,"Smartwatch Apple Watch Series 7",Apple,Wearables
+141,"Rato Logitech MX Vertical",Logitech,Perifericos
+142,"Teclado Corsair K65 Mini",Corsair,Perifericos
+143,"Monitor 27" BenQ Mobiuz",BenQ,Monitores
+144,"Headset JBL Quantum 400",JBL,Audio
+145,"Smartphone Samsung Galaxy S21",Samsung,Smartphones
+146,"Rato Razer Naga Pro",Razer,Perifericos
+147,"Teclado Gaming Keychron K4",Keychron,Perifericos
+148,"Monitor 32 Polegadas Acer",Acer,Monitores
+149,"Headset HyperX Cloud Flight",HyperX,Audio
+150,"Smartphone OnePlus 10 Pro",OnePlus,Smartphones
+151,"Rato SteelSeries Prime",SteelSeries,Perifericos
+152,"Teclado Logitech K780",Logitech,Perifericos
+153,"Monitor 24 Polegadas Dell UltraSharp",Dell,Monitores
+154,"Headset Bose SoundLink",Bose,Audio
+155,"Smartphone Oppo Reno 6",Oppo,Smartphones
+156,"Rato Logitech G604",OnePlus,Smartphones
+157,"Teclado Corsair Strafe RGB",Corsair,Perifericos
+158,"Monitor 28" Samsung Odyssey G7",SteelSeries,Perifericos
+159,"Headset Razer Hammerhead",Apple,Smartphones
+160,"Smartphone Samsung Galaxy S22",Corsair,Perifericos
+161,"Rato Razer Orochi V2",Razer,Perifericos
+162,"Teclado Ducky Mecha Mini",Xiaomi,Smartphones
+163,"Monitor 24" AOC Gaming",Logitech,Perifericos
+164,"Headset Sony WH-1000XM4",Apple,Smartphones
+165,"Smartphone iPhone 14 Pro",MSI,Componentes
+166,"Rato HyperX Pulsefire Surge",Brother,Impressoras
+167,"Teclado Logitech G613",Fitbit,Wearables
+168,"Monitor 27" LG UltraFine",ASUS,Perifericos
+169,"Headset Corsair HS70",Epson,Impressoras
+170,"Smartphone Xiaomi 13",HyperX,Audio
+171,"Rato SteelSeries Rival 5",Logitech,Perifericos
+172,"Teclado Razer Pro Type",Acer,Monitores
+173,"Monitor 27" ASUS ProArt",BenQ,Monitores
+174,"Headset Sennheiser HD 560S",Sony,Audio
+175,"Smartphone Google Pixel 7",HyperX,Audio
