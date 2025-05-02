@@ -55,6 +55,18 @@ for i in range(5000):
         'Canal': 'Loja Física'
     }
     vendas_fisicas.append(venda)
+    
+# ---------- Inserir valores nulos em 4 ou 5 vendas físicas ----------
+num_vendas_null_fisica = random.randint(10, 15)
+indices_vendas_null_fisica = random.sample(range(len(vendas_fisicas)), num_vendas_null_fisica)
+
+for idx in indices_vendas_null_fisica:
+    campos_possiveis = ['Data_Venda', 'Quantidade', 'Preço', 'Cliente_Nome']
+    num_campos_a_anular = random.randint(1, 2)
+    campos_a_anular = random.sample(campos_possiveis, num_campos_a_anular)
+
+    for campo in campos_a_anular:
+        vendas_fisicas[idx][campo] = None
 
 df_vendas_fisicas = pd.DataFrame(vendas_fisicas)
 df_vendas_fisicas.to_excel('vendas_loja_fisica.xlsx', index=False)
@@ -82,6 +94,23 @@ for i in range(3000):  # 3.000 transações entre 2021 e 2025
         'channel': 'Online'
     }
     vendas_online.append(venda)
+
+# ---------- Introduzir valores null em 4 a 5 vendas ----------
+num_vendas_com_null = random.randint(10, 15)
+indices_vendas_null = random.sample(range(len(vendas_online)), num_vendas_com_null)
+
+for idx in indices_vendas_null:
+    campos_possiveis = ['date', 'customer_id', 'price', 'quantity']
+    num_campos_a_anular = random.randint(1, 2)
+    campos_escolhidos = random.sample(campos_possiveis, num_campos_a_anular)
+
+    for campo in campos_escolhidos:
+        if campo == 'price':
+            vendas_online[idx]['products'][0]['price'] = None
+        elif campo == 'quantity':
+            vendas_online[idx]['products'][0]['quantity'] = None
+        else:
+            vendas_online[idx][campo] = None
 
 with open('vendas_loja_online.json', 'w') as f:
     json.dump(vendas_online, f, indent=4)

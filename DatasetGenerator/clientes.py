@@ -52,21 +52,33 @@ for _ in range(2000):
     partes_nome = nome_completo.split()
     nome = partes_nome[0].lower()
     sobrenome = partes_nome[-1].lower() if len(partes_nome) > 1 else fake.last_name().lower()
-
     email = gerar_email(nome, sobrenome, dominios, emails_gerados)
     emails_gerados.add(email)
 
-    data_nascimento = fake.date_of_birth(minimum_age=18, maximum_age=80)
+    profissao = random.choice(profissoes)
 
-    
+    # Regras de idade com base na profissão
+    if profissao.lower() == 'estudante':
+        if random.random() < 0.95:
+            data_nascimento = fake.date_of_birth(minimum_age=16, maximum_age=23)
+        else:
+            data_nascimento = fake.date_of_birth(minimum_age=24, maximum_age=80)
+    elif profissao.lower() == 'aposentado':
+        if random.random() < 0.99:
+            data_nascimento = fake.date_of_birth(minimum_age=60, maximum_age=80)
+        else:
+            data_nascimento = fake.date_of_birth(minimum_age=18, maximum_age=59)
+    else:
+        data_nascimento = fake.date_of_birth(minimum_age=20, maximum_age=59)
+
     cliente = {
         'Nome': nome_completo,
-        'Profissão': random.choice(profissoes),
+        'Profissão': profissao,
         'EstadoCivil': random.choice(estados_civis),
         'Sexo': sexo,
         'Distrito': distrito,
         'Concelho': concelho,
-        'Telefone': fake.phone_number(),
+        'Telefone': fake.numerify('9########'),
         'Morada': fake.address(),
         'CódigoPostal': fake.postcode(),
         'DataNascimento': data_nascimento.strftime('%d/%m/%Y'),
@@ -75,9 +87,31 @@ for _ in range(2000):
 
     clientes.append(cliente)
 
+
+# ---------- Introduzir valores vazios aleatórios entre 4 e 6 clientes ----------
+
+num_clientes_com_vazios = random.randint(4, 6)
+indices_afetados = random.sample(range(len(clientes)), num_clientes_com_vazios)
+
+campos_proibidos = ['Nome', 'Email', 'DataNascimento']  # Campos que nunca queremos deixar vazios
+
+for idx in indices_afetados:
+    campos_possiveis = [campo for campo in clientes[idx].keys() if campo not in campos_proibidos]
+    num_campos_a_vaziar = random.randint(1, 3)
+    campos_a_vaziar = random.sample(campos_possiveis, num_campos_a_vaziar)
+    for campo in campos_a_vaziar:
+        clientes[idx][campo] = ""  # String vazia para representar valor em branco
+
+
 # ---------- Exportação ----------
 
 df_clientes = pd.DataFrame(clientes)
 df_clientes.to_csv('clientes.csv', index=False)
+clientes_com_vazios = df_clientes[df_clientes.eq('').any(axis=1)]
+
+# Mostrar os clientes com campos vazios
+print("Clientes com pelo menos um campo vazio:\n")
+print(clientes_com_vazios)
+print(f"\nTotal de clientes com campos vazios: {len(clientes_com_vazios)}")
 print(df_clientes.head())
 print(f"Total de clientes gerados: {len(clientes)}")
