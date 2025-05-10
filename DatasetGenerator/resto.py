@@ -33,6 +33,23 @@ def get_brand(prod_name):
             return brand
 
   
+import numpy as np
+
+# Função para gerar preço com lognormal (distribuição assimétrica)
+def gerar_preco_lognormal():
+    mu = 4.5  # Média do logaritmo do preço
+    sigma = 1.2  # Desvio padrão do logaritmo do preço
+    preco = np.random.lognormal(mu, sigma)
+    preco = np.clip(preco, 50, 3000)  # Limitar o preço entre 50 e 3000
+    return round(preco, 2)
+
+
+# Função para gerar quantidade com distribuição Poisson
+
+def gerar_quantidade_poisson(media_quantidade=2):
+    quantidade = np.random.poisson(media_quantidade)
+    return max(quantidade, 1)  # Garante que a quantidade seja pelo menos 1
+
 
 # ---------- Função para Gerar Vendas ----------
 
@@ -42,6 +59,12 @@ def gerar_vendas(cliente, num_vendas_cliente, produtos, tipo_loja, data_inicio, 
         data = fake.date_between_dates(date_start=data_inicio, date_end=data_fim)
         produto = random.choice(produtos['produtos_categorizados'])  # Produto aleatório
         
+        # Gerar preço utilizando a distribuição lognormal
+        preco = gerar_preco_lognormal()
+        
+        # Gerar quantidade utilizando a distribuição de Poisson
+        quantidade = gerar_quantidade_poisson()
+
         if tipo_loja == 'Online':
             product_id = next((p['ProductID'] for p in equivalencia_produtos if p['Nome_JSON'] == produto['nome']), None)
             venda = {
@@ -52,8 +75,8 @@ def gerar_vendas(cliente, num_vendas_cliente, produtos, tipo_loja, data_inicio, 
                     'name': produto['nome'],
                     'category': produto['categoria'],
                     'brand': get_brand(produto['nome']),
-                    'price': round(random.uniform(20, 1500), 2),
-                    'quantity': random.randint(1, 5),
+                    'price': preco,
+                    'quantity': quantidade,
                     'discount': random.randint(0, 50),
                 }],
                 'customer_id': cliente['customer_id'],
@@ -67,8 +90,8 @@ def gerar_vendas(cliente, num_vendas_cliente, produtos, tipo_loja, data_inicio, 
                 'Produto': produto['nome'],
                 'Categoria': produto['categoria'],
                 'Marca': get_brand(produto['nome']),
-                'Quantidade': random.randint(1, 5),
-                'Preço': round(random.uniform(20, 1500), 2),
+                'Quantidade': quantidade,
+                'Preço': preco,
                 'Percentagem_Desconto': random.randint(0, 50),
                 'Cliente_Nome': cliente['Nome'],
                 'Concelho': cliente['Concelho'],
@@ -76,6 +99,7 @@ def gerar_vendas(cliente, num_vendas_cliente, produtos, tipo_loja, data_inicio, 
             }
         vendas.append(venda)
     return vendas
+
 
 # ---------- Introdução de Valores Nulos Aleatórios ----------
 
