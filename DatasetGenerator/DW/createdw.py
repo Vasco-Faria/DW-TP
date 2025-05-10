@@ -3,8 +3,9 @@ import csv
 from datetime import datetime
 
 # Função para garantir que não há valores nulos
-def remove_null_values(dicionario):
-    return {k: v for k, v in dicionario.items() if v not in [None, '', 'null']}
+def registo_valido(registo):
+    return all(v not in [None, '', 'null', 'NaN'] for v in registo.values())
+
 
 # Função para remover o "C" do ClienteId e o "P" do ProdutoId
 def clean_ids(cliente_id, produto_id):
@@ -34,7 +35,9 @@ for venda in vendas:
                     "Marca": produto.get("brand", ""),
                     "Categoria": produto.get("category", "")
                 }
-                produtos_unicos[produto_id] = remove_null_values(produto_info)  # Remove nulls
+                
+                if registo_valido(produto_info):
+                    produtos_unicos[produto_id] = produto_info
                 produto_counter += 1  # Incrementa o contador
 
 # Escrever para o CSV com a ordem especificada
@@ -94,7 +97,8 @@ for venda in vendas:
                 "Distrito": distrito,
                 "Concelho": dados_cliente["Concelho"]
             }
-            clientes_unicos[cliente_id] = remove_null_values(cliente_info)  # Remove nulls
+            if registo_valido(cliente_info):
+                clientes_unicos[cliente_id] = cliente_info
 
 # Escrever para DimCliente.csv com a ordem especificada
 with open('DimCliente.csv', 'w', newline='', encoding='utf-8') as csvfile:

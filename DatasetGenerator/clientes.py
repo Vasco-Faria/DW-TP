@@ -18,6 +18,22 @@ def gerar_email(nome, sobrenome, dominios, existentes):
         email = f"{base}{random.randint(1, 999)}@{dominio}"
     return email
 
+def inserir_nulls_clientes(clientes, percentual_nulos=0.05):
+    # Limitar a quantidade de clientes com valores nulos
+    num_clientes_total = len(clientes)
+    num_clientes_nulos = int(num_clientes_total * percentual_nulos)  # Calculando o número de clientes com nulos
+    clientes_com_nulos = random.sample(clientes, num_clientes_nulos)  # Seleciona aleatoriamente os clientes a afetar com nulos
+    
+    for cliente in clientes_com_nulos:
+        campos_possiveis = list(cliente.keys())  # Obtendo todos os campos possíveis
+        num_campos_a_anular = random.randint(1, len(campos_possiveis) // 2)  # Selecionar entre 1 e metade dos campos para serem nulos
+        campos_a_anular = random.sample(campos_possiveis, num_campos_a_anular)  # Selecionando aleatoriamente os campos a anular
+
+        for campo in campos_a_anular:
+            cliente[campo] = None  # Atribuindo None para o campo selecionado
+    return clientes
+
+
 # ---------- Carregamento de Dados ----------
 
 distritos_concelhos = carregar_json('dados/distritos_concelhos.json')
@@ -28,10 +44,10 @@ estados_civis = carregar_json('dados/estados_civis.json')
 # ---------- Configurações ----------
 
 distrito_pesos = {
-    'Braga': 0.40, 'Porto': 0.15, 'Viana do Castelo': 0.10, 'Vila Real': 0.08,
-    'Aveiro': 0.05, 'Bragança': 0.03, 'Castelo Branco': 0.02, 'Coimbra': 0.03,
-    'Évora': 0.01, 'Faro': 0.01, 'Guarda': 0.02, 'Leiria': 0.02, 'Lisboa': 0.05,
-    'Portalegre': 0.01, 'Santarém': 0.02, 'Setúbal': 0.03, 'Viseu': 0.03, 'Beja': 0.01
+    'Braga': 0.20, 'Porto': 0.15, 'Viana do Castelo': 0.08, 'Vila Real': 0.06,
+    'Aveiro': 0.06, 'Bragança': 0.05, 'Castelo Branco': 0.04, 'Coimbra': 0.05,
+    'Évora': 0.03, 'Faro': 0.04, 'Guarda': 0.03, 'Leiria': 0.04, 'Lisboa': 0.05,
+    'Portalegre': 0.02, 'Santarém': 0.03, 'Setúbal': 0.04, 'Viseu': 0.04, 'Beja': 0.03
 }
 
 distritos = list(distrito_pesos.keys())
@@ -71,10 +87,26 @@ for _ in range(2000):
     else:
         data_nascimento = fake.date_of_birth(minimum_age=20, maximum_age=59)
 
+    # Correlações mais fortes entre variáveis para facilitar clustering
+    # Por exemplo, relacionar estado civil com idade
+    idade = (data_atual.year - data_nascimento.year - ((data_atual.month, data_atual.day) < (data_nascimento.month, data_nascimento.day)))
+    
+    if idade >= 65:  # Aposentados
+        estado_civil_opcoes = ['Casado', 'Viúvo', 'Divorciado']
+        estado_civil_pesos = [0.5, 0.35, 0.15]
+    elif idade <= 23:  # Estudantes
+        estado_civil_opcoes = ['Solteiro', 'Casado', 'Divorciado']
+        estado_civil_pesos = [0.85, 0.1, 0.05]
+    else:  # Outros
+        estado_civil_opcoes = ['Solteiro', 'Casado', 'Divorciado', 'Viúvo']
+        estado_civil_pesos = [0.40, 0.45, 0.10, 0.05]
+    
+    estado_civil = random.choices(estado_civil_opcoes, weights=estado_civil_pesos, k=1)[0]
+
     cliente = {
         'Nome': nome_completo,
         'Profissão': profissao,
-        'EstadoCivil': random.choice(estados_civis),
+        'EstadoCivil': estado_civil,
         'Sexo': sexo,
         'Distrito': distrito,
         'Concelho': concelho,
@@ -88,22 +120,10 @@ for _ in range(2000):
     clientes.append(cliente)
 
 
-# ---------- Introduzir valores vazios aleatórios entre 4 e 6 clientes ----------
-
-num_clientes_com_vazios = random.randint(4, 6)
-indices_afetados = random.sample(range(len(clientes)), num_clientes_com_vazios)
-
-campos_proibidos = ['Nome', 'Email', 'DataNascimento']  # Campos que nunca queremos deixar vazios
-
-for idx in indices_afetados:
-    campos_possiveis = [campo for campo in clientes[idx].keys() if campo not in campos_proibidos]
-    num_campos_a_vaziar = random.randint(1, 3)
-    campos_a_vaziar = random.sample(campos_possiveis, num_campos_a_vaziar)
-    for campo in campos_a_vaziar:
-        clientes[idx][campo] = ""  # String vazia para representar valor em branco
-
-
 # ---------- Exportação ----------
+
+clientes = inserir_nulls_clientes(clientes, percentual_nulos=0.05)  # 5% de vendas com valores nulos
+
 
 df_clientes = pd.DataFrame(clientes)
 df_clientes.to_csv('clientes.csv', index=False)
