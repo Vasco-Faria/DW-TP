@@ -619,6 +619,10 @@
     {
       "nome": "Smartphone Oppo Reno 6",
       "categoria": "Smartphones"
+    },
+    { 
+      "nome": "Teclado Corsair K95 RGB",
+      "categoria": "Perifericos"
     }
   ]
 }
