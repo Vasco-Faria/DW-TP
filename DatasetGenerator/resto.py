@@ -17,6 +17,23 @@ def carregar_json(caminho):
         print(f"Erro: O arquivo {caminho} está mal formatado.")
         return {}
 
+def get_brand(prod_name):
+    brands = [
+    "Logitech", "Razer", "Corsair", "SteelSeries", "HyperX", "Ducky", "Keychron",
+    "Redragon", "Cooler Master", "G.Skill", "Microsoft", "Kinesis", "ASUS",
+    "Anne Pro", "HP", "AOC", "Philips", "Dell", "Acer", "LG", "BenQ", "MSI",
+    "Samsung", "Sennheiser", "JBL", "Bose", "Sony", "Apple", "Xiaomi", "Huawei",
+    "Google (Pixel)", "OnePlus", "Oppo", "Nokia", "Vivo", "NVIDIA", "Gigabyte",
+    "Kingston", "Crucial", "WD (Western Digital)", "Epson", "Canon", "Brother",
+    "Fitbit", "Garmin"]
+    
+    # search for the brand in the product name
+    for brand in brands:
+        if brand.lower() in prod_name.lower():
+            return brand
+
+  
+
 # ---------- Função para Gerar Vendas ----------
 
 def gerar_vendas(cliente, num_vendas_cliente, produtos, tipo_loja, data_inicio, data_fim, canal):
@@ -34,6 +51,7 @@ def gerar_vendas(cliente, num_vendas_cliente, produtos, tipo_loja, data_inicio, 
                     'product_id': product_id,
                     'name': produto['nome'],
                     'category': produto['categoria'],
+                    'brand': get_brand(produto['nome']),
                     'price': round(random.uniform(20, 1500), 2),
                     'quantity': random.randint(1, 5),
                     'discount': random.randint(0, 50),
@@ -48,6 +66,7 @@ def gerar_vendas(cliente, num_vendas_cliente, produtos, tipo_loja, data_inicio, 
                 'Data_Venda': data.strftime('%d/%m/%Y'),
                 'Produto': produto['nome'],
                 'Categoria': produto['categoria'],
+                'Marca': get_brand(produto['nome']),
                 'Quantidade': random.randint(1, 5),
                 'Preço': round(random.uniform(20, 1500), 2),
                 'Percentagem_Desconto': random.randint(0, 50),
