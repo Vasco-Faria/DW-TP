@@ -34,41 +34,221 @@ def get_brand(prod_name):
 
   
 import numpy as np
+def fator_sazonal(data):
+    # Obtém o mês da data
+    mes = data.month
+    
+    # Fatores sazonais base (mais altos em dezembro, mais baixos no verão)
+    fatores_sazonais = {
+        1: 0.8,   # Janeiro (queda pós-festas)
+        2: 0.7,   # Fevereiro
+        3: 0.8,   # Março 
+        4: 0.9,   # Abril
+        5: 1.0,   # Maio
+        6: 0.9,   # Junho
+        7: 0.8,   # Julho (férias de verão)
+        8: 0.7,   # Agosto (férias de verão)
+        9: 1.1,   # Setembro (regresso às aulas)
+        10: 1.0,  # Outubro
+        11: 1.2,  # Novembro (Black Friday)
+        12: 1.5   # Dezembro (época festiva)
+    }
+    
+    # Adiciona algum ruído aleatório ao fator
+    factor = fatores_sazonais[mes] * random.uniform(0.9, 1.1)
+    return factor
 
-# Função para gerar preço com lognormal (distribuição assimétrica)
-def gerar_preco_lognormal():
+def gerar_afinidade_categorias(cliente_id):
+    # Usa o ID do cliente como seed para consistência
+    random.seed(hash(cliente_id))
+    
+    categorias = ["Teclados", "Mouses", "Monitores", "Smartphones", "Acessórios", 
+                 "Áudio", "Impressoras", "Componentes", "Notebooks"]
+    
+    # Gera um dicionário com pontuações de afinidade para cada categoria
+    afinidades = {}
+    for categoria in categorias:
+        # Distribuição tipo Dirichlet - algumas categorias serão favorecidas
+        if random.random() < 0.3:  # 30% de chance de alta afinidade
+            afinidades[categoria] = random.uniform(0.7, 1.0)
+        else:
+            afinidades[categoria] = random.uniform(0.1, 0.5)
+    
+    # Resetar a seed aleatória
+    random.seed()
+    return afinidades
+
+def fator_demografico(cliente):
+    # Calcular idade aproximada
+    try:
+        data_nascimento = pd.to_datetime(cliente['DataNascimento'], format='%d/%m/%Y')
+        idade = datetime.now().year - data_nascimento.year
+    except:
+        idade = random.randint(18, 70)  # Default em caso de erro
+    
+    # Profissões de alta renda vs. baixa renda
+    profissoes_alta_renda = ["Médico", "Advogado", "Engenheiro", "Gestor", "Diretor"]
+    
+    # Calculando fator demográfico
+    fator_base = 1.0
+    
+    # Ajuste por idade
+    if idade < 25:
+        fator_base *= 0.85  # Jovens tendem a gastar menos por item
+    elif idade > 50:
+        fator_base *= 1.2   # Pessoas mais velhas podem gastar mais
+        
+    # Ajuste por profissão
+    if cliente['Profissão'] in profissoes_alta_renda:
+        fator_base *= 1.3
+        
+    # Ajuste por estado civil
+    if cliente['EstadoCivil'] == "Casado":
+        fator_base *= 1.1
+        
+    return fator_base
+
+def selecionar_produto_com_bias(cliente, produtos, afinidade_categorias):
+    # Bias geográfico implícito
+    distritos_urbanos = ["Lisboa", "Porto", "Braga"]
+    distritos_costeiros = ["Faro", "Setúbal", "Aveiro"]
+    
+    distrito = cliente.get('Distrito', '')
+    
+    # Lista base de todas as categorias
+    categorias = list(afinidade_categorias.keys())
+    pesos = list(afinidade_categorias.values())
+    
+    # Modificar pesos baseado em localização
+    if distrito in distritos_urbanos:
+        # Áreas urbanas - mais smartphones, notebooks
+        for i, cat in enumerate(categorias):
+            if cat in ["Smartphones", "Notebooks"]:
+                pesos[i] *= 1.5
+    
+    elif distrito in distritos_costeiros:
+        # Áreas costeiras - mais acessórios
+        for i, cat in enumerate(categorias):
+            if cat in ["Acessórios", "Áudio"]:
+                pesos[i] *= 1.3
+    
+    # Normalizar pesos
+    soma = sum(pesos)
+    pesos = [p/soma for p in pesos]
+    
+    # Selecionar categoria com base nos pesos modificados
+    categoria_escolhida = random.choices(categorias, weights=pesos, k=1)[0]
+    
+    # Filtrar produtos pela categoria escolhida
+    produtos_categoria = [p for p in produtos['produtos_categorizados'] 
+                         if p['categoria'] == categoria_escolhida]
+    
+    # Se não houver produtos na categoria, escolha qualquer produto
+    if not produtos_categoria:
+        return random.choice(produtos['produtos_categorizados'])
+    
+    return random.choice(produtos_categoria)
+
+def gerar_preco_lognormal(produto, cliente, data_venda):
+    # Parâmetros base
     mu = 4.5  # Média do logaritmo do preço
     sigma = 1.2  # Desvio padrão do logaritmo do preço
-    preco = np.random.lognormal(mu, sigma)
-    preco = np.clip(preco, 50, 3000)  # Limitar o preço entre 50 e 3000
-    return round(preco, 2)
+    
+    # Ajuste sazonal
+    fator_sazonalidade = fator_sazonal(data_venda)
+    
+    # Ajuste demográfico
+    fator_demo = fator_demografico(cliente)
+    
+    # Gerar preço base
+    preco_base = np.random.lognormal(mu, sigma)
+    
+    # Aplicar ajustes (sutilmente)
+    preco_ajustado = preco_base * (1 + (fator_sazonalidade - 1) * 0.3) * (1 + (fator_demo - 1) * 0.2)
+    
+    # Limitar preço
+    preco_final = np.clip(preco_ajustado, 50, 3000)
+    
+    return round(preco_final, 2)
 
-
-# Função para gerar quantidade com distribuição Poisson
-
-def gerar_quantidade_poisson(media_quantidade=2):
-    quantidade = np.random.poisson(media_quantidade)
-    return max(quantidade, 1)  # Garante que a quantidade seja pelo menos 1
+def gerar_quantidade_poisson(cliente, produto, data_venda, media_quantidade=2):
+    # Ajuste sazonal
+    fator_sazonalidade = fator_sazonal(data_venda)
+    
+    # Ajustar a média da distribuição Poisson baseado em fatores
+    media_ajustada = media_quantidade * fator_sazonalidade
+    
+    # Gerar quantidade
+    quantidade = np.random.poisson(media_ajustada)
+    
+    return max(quantidade, 1)  # Garantir pelo menos 1
 
 
 # ---------- Função para Gerar Vendas ----------
 
 def gerar_vendas(cliente, num_vendas_cliente, produtos, tipo_loja, data_inicio, data_fim, canal):
     vendas = []
+    
+    # Gerar características do cliente uma vez (para consistência)
+    afinidade_categorias = gerar_afinidade_categorias(cliente['customer_id'])
+    
+    # Distribuir as vendas ao longo do período de tempo
+    # (criando implicitamente padrões temporais sem adicionar novos atributos)
+    datas_vendas = []
+    periodo_total = (data_fim - data_inicio).days
+    
     for _ in range(num_vendas_cliente):
-        data = fake.date_between_dates(date_start=data_inicio, date_end=data_fim)
-        produto = random.choice(produtos['produtos_categorizados'])  # Produto aleatório
+        # Gerar datas com tendência para clusters temporais
+        if random.random() < 0.3:  # 30% das compras tendem a agrupar-se
+            if datas_vendas:  # Se já existem datas de compra
+                # Agrupar próximo a uma data existente (7 dias antes ou depois)
+                data_base = random.choice(datas_vendas)
+                dias_offset = random.randint(-7, 7)
+                nova_data = data_base + timedelta(days=dias_offset)
+                # Garantir que está dentro do intervalo
+                if data_inicio <= nova_data <= data_fim:
+                    datas_vendas.append(nova_data)
+                else:
+                    # Fallback para data aleatória
+                    dias_aleatorios = random.randint(0, periodo_total)
+                    datas_vendas.append(data_inicio + timedelta(days=dias_aleatorios))
+            else:
+                # Primeira compra - data aleatória
+                dias_aleatorios = random.randint(0, periodo_total)
+                datas_vendas.append(data_inicio + timedelta(days=dias_aleatorios))
+        else:
+            # Compra com data aleatória
+            dias_aleatorios = random.randint(0, periodo_total)
+            datas_vendas.append(data_inicio + timedelta(days=dias_aleatorios))
+    
+    # Ordenar as datas
+    datas_vendas.sort()
+    
+    for i, data in enumerate(datas_vendas):
+        # Selecionar produto com viés
+        produto = selecionar_produto_com_bias(cliente, produtos, afinidade_categorias)
         
-        # Gerar preço utilizando a distribuição lognormal
-        preco = gerar_preco_lognormal()
+        # Gerar preço com distribuições que criam padrões
+        preco = gerar_preco_lognormal(produto, cliente, data)
         
-        # Gerar quantidade utilizando a distribuição de Poisson
-        quantidade = gerar_quantidade_poisson()
-
+        # Gerar quantidade com distribuições que criam padrões
+        quantidade = gerar_quantidade_poisson(cliente, produto, data)
+        
+        # Gerar desconto (com tendência para valores específicos)
+        # Criar clusters de descontos em valores de marketing: 0%, 10%, 25%, 50%
+        pontos_desconto = [0, 10, 25, 50]
+        probs_desconto = [0.4, 0.3, 0.2, 0.1]  # Probabilidades decrescentes
+        desconto_base = random.choices(pontos_desconto, weights=probs_desconto, k=1)[0]
+        
+        # Adicionar uma pequena variação para alguns casos
+        if random.random() < 0.3:  # 30% das vezes
+            desconto_base += random.randint(-5, 5)
+            desconto_base = max(0, min(50, desconto_base))  # Limitar entre 0-50
+        
         if tipo_loja == 'Online':
             product_id = next((p['ProductID'] for p in equivalencia_produtos if p['Nome_JSON'] == produto['nome']), None)
             venda = {
-                'sale_id': f'S{cliente["customer_id"]}_{_+1}',
+                'sale_id': f'S{cliente["customer_id"]}_{i+1}',
                 'date': data.strftime('%Y-%m-%d'),
                 'products': [{
                     'product_id': product_id,
@@ -77,7 +257,7 @@ def gerar_vendas(cliente, num_vendas_cliente, produtos, tipo_loja, data_inicio, 
                     'brand': get_brand(produto['nome']),
                     'price': preco,
                     'quantity': quantidade,
-                    'discount': random.randint(0, 50),
+                    'discount': desconto_base,
                 }],
                 'customer_id': cliente['customer_id'],
                 'email': cliente['Email'],
@@ -92,14 +272,14 @@ def gerar_vendas(cliente, num_vendas_cliente, produtos, tipo_loja, data_inicio, 
                 'Marca': get_brand(produto['nome']),
                 'Quantidade': quantidade,
                 'Preço': preco,
-                'Percentagem_Desconto': random.randint(0, 50),
+                'Percentagem_Desconto': desconto_base,
                 'Cliente_Nome': cliente['Nome'],
                 'Concelho': cliente['Concelho'],
                 'Canal': canal
             }
         vendas.append(venda)
+    
     return vendas
-
 
 # ---------- Introdução de Valores Nulos Aleatórios ----------
 
