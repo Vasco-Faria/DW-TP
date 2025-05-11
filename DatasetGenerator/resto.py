@@ -2,6 +2,7 @@ from faker import Faker
 import pandas as pd
 import random
 import json
+import numpy as np
 from datetime import datetime, timedelta
 
 # ---------- Funções Utilitárias ----------
@@ -17,13 +18,40 @@ def carregar_json(caminho):
         print(f"Erro: O arquivo {caminho} está mal formatado.")
         return {}
 
+def adicionar_cliente_valor(cliente_id):
+    """
+    Adiciona consistência no valor do cliente ao longo do tempo
+    (útil para segmentação)
+    """
+    # Usar cliente_id como seed para ter comportamento consistente
+    random.seed(hash(cliente_id))
+    
+    # Gerar um multiplicador de valor para este cliente
+    # Alguns clientes consistentemente gastam mais que outros
+    valor_base = random.choices(
+        ["alto", "médio", "baixo"],
+        weights=[0.2, 0.5, 0.3],
+        k=1
+    )[0]
+    
+    multiplicadores = {
+        "alto": random.uniform(1.3, 2.0),
+        "médio": random.uniform(0.8, 1.3),
+        "baixo": random.uniform(0.5, 0.8)
+    }
+    
+    # Resetar seed
+    random.seed()
+    
+    return multiplicadores[valor_base]
+
 def get_brand(prod_name):
     brands = [
     "Logitech", "Razer", "Corsair", "SteelSeries", "HyperX", "Ducky", "Keychron",
     "Redragon", "Cooler Master", "G.Skill", "Microsoft", "Kinesis", "ASUS",
     "Anne Pro", "HP", "AOC", "Philips", "Dell", "Acer", "LG", "BenQ", "MSI",
     "Samsung", "Sennheiser", "JBL", "Bose", "Sony", "Apple", "Xiaomi", "Huawei",
-    "Google (Pixel)", "OnePlus", "Oppo", "Nokia", "Vivo", "NVIDIA", "Gigabyte",
+    "Google (Pixel)", "Goofgle","OnePlus", "Oppo", "Nokia", "Vivo", "NVIDIA", "Gigabyte",
     "Kingston", "Crucial", "WD (Western Digital)", "Epson", "Canon", "Brother",
     "Fitbit", "Garmin"]
     
@@ -32,31 +60,26 @@ def get_brand(prod_name):
         if brand.lower() in prod_name.lower():
             return brand
 
-  
-import numpy as np
 def fator_sazonal(data):
-    # Obtém o mês da data
     mes = data.month
+    dia = data.day
+    fatores_sazonais = {1: 0.8, 2: 0.7, 3: 0.8, 4: 0.9, 5: 1.0, 6: 0.9, 
+                        7: 0.8, 8: 0.7, 9: 1.1, 10: 1.0, 11: 1.2, 12: 1.5}
     
-    # Fatores sazonais base (mais altos em dezembro, mais baixos no verão)
-    fatores_sazonais = {
-        1: 0.8,   # Janeiro (queda pós-festas)
-        2: 0.7,   # Fevereiro
-        3: 0.8,   # Março 
-        4: 0.9,   # Abril
-        5: 1.0,   # Maio
-        6: 0.9,   # Junho
-        7: 0.8,   # Julho (férias de verão)
-        8: 0.7,   # Agosto (férias de verão)
-        9: 1.1,   # Setembro (regresso às aulas)
-        10: 1.0,  # Outubro
-        11: 1.2,  # Novembro (Black Friday)
-        12: 1.5   # Dezembro (época festiva)
-    }
+    fator = fatores_sazonais[mes]
     
-    # Adiciona algum ruído aleatório ao fator
-    factor = fatores_sazonais[mes] * random.uniform(0.9, 1.1)
-    return factor
+    # Black Friday (última sexta-feira de novembro)
+    if mes == 11 and data.weekday() == 4 and 24 <= dia <= 30:
+        fator *= random.uniform(2.0, 3.0)
+    # Lançamento de smartphones (setembro)
+    elif mes == 9 and random.random() < 0.2:
+        fator *= 1.5
+    # Fins de semana
+    elif data.weekday() >= 5:
+        fator *= 1.2
+        
+    return fator * random.uniform(0.9, 1.1)
+
 
 def gerar_afinidade_categorias(cliente_id):
     # Usa o ID do cliente como seed para consistência
@@ -188,7 +211,8 @@ def gerar_quantidade_poisson(cliente, produto, data_venda, media_quantidade=2):
 
 def gerar_vendas(cliente, num_vendas_cliente, produtos, tipo_loja, data_inicio, data_fim, canal):
     vendas = []
-    
+    # No início da função gerar_vendas, adicione:
+    valor_cliente = adicionar_cliente_valor(cliente['customer_id'])
     # Gerar características do cliente uma vez (para consistência)
     afinidade_categorias = gerar_afinidade_categorias(cliente['customer_id'])
     
@@ -229,7 +253,7 @@ def gerar_vendas(cliente, num_vendas_cliente, produtos, tipo_loja, data_inicio, 
         produto = selecionar_produto_com_bias(cliente, produtos, afinidade_categorias)
         
         # Gerar preço com distribuições que criam padrões
-        preco = gerar_preco_lognormal(produto, cliente, data)
+        preco = gerar_preco_lognormal(produto, cliente, data) * valor_cliente
         
         # Gerar quantidade com distribuições que criam padrões
         quantidade = gerar_quantidade_poisson(cliente, produto, data)
