@@ -154,23 +154,23 @@ ProdutoId,Nome,Marca,Categoria
 153,"Monitor 24 Polegadas Dell UltraSharp",Dell,Monitores
 154,"Headset Bose SoundLink",Bose,Audio
 155,"Smartphone Oppo Reno 6",Oppo,Smartphones
-156,"Rato Logitech G604",OnePlus,Smartphones
+156,"Rato Logitech G604",Logitech,Perifericos
 157,"Teclado Corsair Strafe RGB",Corsair,Perifericos
-158,"Monitor 28" Samsung Odyssey G7",SteelSeries,Perifericos
-159,"Headset Razer Hammerhead",Apple,Smartphones
-160,"Smartphone Samsung Galaxy S22",Corsair,Perifericos
+158,"Monitor 28" Samsung Odyssey G7",Samsung,Monitores
+159,"Headset Razer Hammerhead",Razer,Audio
+160,"Smartphone Samsung Galaxy S22",Samsung,Smartphones
 161,"Rato Razer Orochi V2",Razer,Perifericos
-162,"Teclado Ducky Mecha Mini",Xiaomi,Smartphones
-163,"Monitor 24" AOC Gaming",Logitech,Perifericos
-164,"Headset Sony WH-1000XM4",Apple,Smartphones
-165,"Smartphone iPhone 14 Pro",MSI,Componentes
-166,"Rato HyperX Pulsefire Surge",Brother,Impressoras
-167,"Teclado Logitech G613",Fitbit,Wearables
-168,"Monitor 27" LG UltraFine",ASUS,Perifericos
-169,"Headset Corsair HS70",Epson,Impressoras
-170,"Smartphone Xiaomi 13",HyperX,Audio
-171,"Rato SteelSeries Rival 5",Logitech,Perifericos
-172,"Teclado Razer Pro Type",Acer,Monitores
-173,"Monitor 27" ASUS ProArt",BenQ,Monitores
-174,"Headset Sennheiser HD 560S",Sony,Audio
-175,"Smartphone Google Pixel 7",HyperX,Audio
+162,"Teclado Ducky Mecha Mini",Ducky,Perifericos
+163,"Monitor 24" AOC Gaming",AOC,Monitores
+164,"Headset Sony WH-1000XM4",Sony,Audio
+165,"Smartphone iPhone 14 Pro",Apple,Smartphones
+166,"Rato HyperX Pulsefire Surge",HyperX,Perifericos
+167,"Teclado Logitech G613",Logitech,Perifericos
+168,"Monitor 27" LG UltraFine",LG,Monitores
+169,"Headset Corsair HS70",Corsair,Audio
+170,"Smartphone Xiaomi 13",Xiaomi,Smartphones
+171,"Rato SteelSeries Rival 5",SteelSeries,Perifericos
+172,"Teclado Razer Pro Type",Razer,Perifericos
+173,"Monitor 27" ASUS ProArt",ASUS,Monitores
+174,"Headset Sennheiser HD 560S",Sennheiser,Audio
+175,"Smartphone Google Pixel 7",Google,Smartphones
