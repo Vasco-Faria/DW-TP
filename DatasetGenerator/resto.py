@@ -257,9 +257,10 @@ df_vendas_fisicas.to_excel('vendas_loja_fisica.xlsx', index=False)
 
 # 5. Gerar Registos da Loja Online (Fonte 2: JSON)
 vendas_online = []
+clientes_validos = equivalencia_clientes.dropna(subset=['Distrito']).reset_index(drop=True)
 for i in range(3000):  # 3.000 transações entre 2021 e 2025
     data = fake.date_between_dates(date_start=datetime(2021, 1, 1), date_end=datetime(2025, 4, 12))
-    cliente = equivalencia_clientes.iloc[random.randint(0, len(equivalencia_clientes)-1)]
+    cliente = clientes_validos.iloc[random.randint(0, len(clientes_validos)-1)]
     produto = random.choice(produtos_categorizados_online['produtos_categorizados'])  # Selecionando um produto aleatório
 
     product_id = next((p['ProductID'] for p in equivalencia_produtos if p['Nome_JSON'] == produto['nome']), None)  # fallback se não encontrar
