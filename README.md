@@ -18,7 +18,7 @@ O processo de integração de dados foi realizado com o **Apache NiFi**, permiti
 - 🧾 JSON: vendas online (2021–2025), catálogo de produtos
 - 🗃️ MySQL: base de clientes
 
-O ficheiro `.json` contém a pipeline completa para:
+O ficheiro `Projeto_SDW_nifi.json` contém a pipeline completa para:
 
 - Extração e limpeza de dados
 - Mapeamento por tabelas de equivalência
