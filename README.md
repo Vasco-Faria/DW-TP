@@ -1,6 +1,16 @@
 # Sistema de Suporte à Decisão - Perifericum 🛠️📊
 
-Este repositório contém os principais artefatos desenvolvidos no âmbito do projeto de Data Warehouse para a loja de eletrónica **Perifericum**, realizado no contexto da unidade curricular **Sistemas de Armazéns de Dados** do Mestrado em Engenharia Informática da Universidade do Minho.
+Este repositório contém os principais artefatos desenvolvidos no âmbito do projeto de Data Warehouse para a loja de eletrónica **Perifericum**, realizado no contexto do perfil de **Sistemas de Armazéns de Dados** do Mestrado em Engenharia Informática da Universidade do Minho.
+
+---
+
+## 📈 Avaliação por Componentes
+
+| Componente                                                             | Nota      |
+|-----------------------------------------------------------------------|-----------|
+| Conceção e Implementação de Armazéns de Dados                         | **18 valores** |
+| Sistemas de Extração, Transformação e Carregamento de Dados (ETL)     | **17 valores** |
+| Aquisição de Conhecimento em Armazéns de Dados                        | *Por atribuir* |
 
 ---
 
